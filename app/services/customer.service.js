@@ -14,7 +14,6 @@ module.exports = {
                 firstName : body.firstName,
                 lastName  : body.lastName,
                 password  : body.password,
-                mobFlag   : body.mobFlag,
                 mobile    : body.mobile
             }
 
@@ -97,7 +96,6 @@ module.exports = {
                 firstName : body.firstName,
                 lastName  : body.lastName,
                 password  : body.password,
-                mobFlag   : body.mobFlag,
                 mobile    : body.mobile
             }
 
