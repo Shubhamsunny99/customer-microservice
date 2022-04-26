@@ -19,6 +19,7 @@ module.exports = {
 
             await Customer.findOne({$or : [{email : body.email.toLowerCase()}, {mobile: Number(body.mobile)}]})
                 .then(async custmerD => {
+                    console.log(">>>>>>", custmerD)
                     if(custmerD){
                         return reject("Email or Mobile Already Exist")
                     }
@@ -74,7 +75,7 @@ module.exports = {
         return new Promise(async(resolve, reject) => {
             const _id = params.id
 
-            await Customer.findOne({_id : id})
+            await Customer.findOne({_id : _id})
                 .then(async custmerD => {
                     if(!custmerD){
                         return reject("User Not Exist")
@@ -102,7 +103,7 @@ module.exports = {
             await Customer.findOne({$or : [{email : body.email.toLowerCase()}, {mobile: Number(body.mobile)}]})
                 .then(async custmerD => {
                     if(custmerD){
-                        if(custmerD._id !== _id){
+                        if(custmerD._id.toString() !== _id){
                             return reject("Email or Mobile is Already taken")
                         }
                     }
@@ -141,3 +142,22 @@ module.exports = {
 
 
 }
+
+
+/*
+{
+  "status": 200,
+  "data": {
+    "email": "kk@g.com",
+    "firstName": "shubham",
+    "lastName": "vatsa",
+    "password": "abcd1234",
+    "mobile": "8888888888",
+    "activeStatus": true,
+    "_id": "6266e6523355fcefee16e0c9",
+    "createdAt": "2022-04-25T18:20:02.445Z",
+    "updatedAt": "2022-04-25T18:20:02.445Z",
+    "__v": 0
+  }
+}
+*/

@@ -55,7 +55,7 @@ module.exports = {
             .then((data) => {
                 return res.json({
                     status : 200,
-                    data  : data
+                    data  : "Customer Updated Successfully"
                 })
             })
             .catch((err) => {
@@ -71,7 +71,7 @@ module.exports = {
             .then((data) => {
                 return res.json({
                     status : 200,
-                    data  : data
+                    data  : "Customer Deactivated"
                 })
             })
             .catch((err) => {

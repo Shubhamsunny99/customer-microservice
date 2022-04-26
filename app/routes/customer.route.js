@@ -13,7 +13,7 @@ customerRoutes.get('/get-customer/:id', customerController.getCustomers)
 
 customerRoutes.put('/update-customer/:id', validator.addCustomerValidation, customerController.updateCustomers)
 
-customerRoutes.put('/delete-customer/:id', customerController.deleteCustomers)
+customerRoutes.put('/deactivate-customer/:id', customerController.deleteCustomers)
 
 
 module.exports = customerRoutes
